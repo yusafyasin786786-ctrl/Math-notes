@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Hub - Mathematics & Logic</title>
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #3b82f6;
+            --text-color: #f8fafc;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px 0;
+            border-bottom: 2px solid var(--card-bg);
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            color: var(--accent-color);
+        }
+
+        p {
+            color: #94a3b8;
+        }
+
+        .game-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .game-card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
+            cursor: pointer;
+            text-align: center;
+            border: 1px solid #334155;
+        }
+
+        .game-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(59, 130, 246, 0.3);
+            border-color: var(--accent-color);
+        }
+
+        .game-thumbnail {
+            width: 100%;
+            height: 160px;
+            background: #0f172a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+        }
+
+        .game-info {
+            padding: 15px;
+        }
+
+        .game-title {
+            font-size: 1.25rem;
+            margin: 0 0 10px 0;
+            font-weight: 600;
+        }
+
+        .play-btn {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Interactive Logic & Physics Hub</h1>
+        <p>A collection of high-performance reflex and calculation simulators.</p>
+    </header>
+
+    <main class="game-grid">
+
+        <!-- Game 1: Moto X3M -->
+        <div class="game-card" onclick="location.href='game.html?game=moto-x3m'">
+            <div class="game-thumbnail">🏍️</div>
+            <div class="game-info">
+                <h3 class="game-title">Moto X3M</h3>
+                <span class="play-btn">Launch Simulator</span>
+            </div>
+        </div>
+
+        <!-- Game 2: Rooftop Runner -->
+        <div class="game-card" onclick="location.href='game.html?game=rooftop-runner'">
+            <div class="game-thumbnail">🏃‍♂️</div>
+            <div class="game-info">
+                <h3 class="game-title">Rooftop Runner</h3>
+                <span class="play-btn">Launch Simulator</span>
+            </div>
+        </div>
+
+        <!-- Game 3: Slope -->
+        <div class="game-card" onclick="location.href='game.html?game=slope'">
+            <div class="game-thumbnail">🟢</div>
+            <div class="game-info">
+                <h3 class="game-title">Slope 3D</h3>
+                <span class="play-btn">Launch Simulator</span>
+            </div>
+        </div>
+
+    </main>
+
+</body>
+</html>
