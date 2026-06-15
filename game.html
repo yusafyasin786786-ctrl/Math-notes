@@ -61,6 +61,22 @@
             alert('Game module not found.');
             window.location.href = 'index.html';
         }
+ <script>
+        // Updated secure game links that work better inside iframes
+        const gameUrls = {
+            'moto-x3m': 'https://ubg77.github.io/edit/moto-x3m/',
+            'rooftop-runner': 'https://gamedistribution.com/games/rooftop-runner',
+            'slope': 'https://kbhgames.com/game/slope'
+        };
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const gameKey = urlParams.get('game');
+
+        if (gameKey && gameUrls[gameKey]) {
+            document.getElementById('game-player').src = gameUrls[gameKey];
+            document.getElementById('game-label').innerText = gameKey.toUpperCase().replace('-', ' ');
+        } else {
+            alert('Game module not found.');
+            window.location.href = 'index.html';
+        }
     </script>
-</body>
-</html>
