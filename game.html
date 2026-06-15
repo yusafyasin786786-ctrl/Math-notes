@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulation Interface</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            background-color: #000;
+            overflow: hidden;
+            font-family: sans-serif;
+        }
+        .nav-bar {
+            background: #111;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .back-btn {
+            color: #fff;
+            text-decoration: none;
+            background: #333;
+            padding: 5px 15px;
+            border-radius: 4px;
+        }
+        iframe {
+            width: 100%;
+            height: calc(100vh - 50px);
+            border: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="nav-bar">
+        <a href="index.html" class="back-btn">← Back to Hub</a>
+        <span style="color: #aaa;" id="game-label">Loading Module...</span>
+    </div>
+
+    <iframe id="game-player" src=""></iframe>
+
+    <script>
+        // Game links sourced from open-source repositories
+        const gameUrls = {
+            'moto-x3m': 'https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/r0b0t2022/moto-x3m/moto-x3m.xml',
+            'rooftop-runner': 'https://html5.gamedistribution.com/39103ee0d8bc47fc8f77364b6e50e932/',
+            'slope': 'https://mathadventure1.github.io/slope/slope.html'
+        };
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const gameKey = urlParams.get('game');
+
+        if (gameKey && gameUrls[gameKey]) {
+            document.getElementById('game-player').src = gameUrls[gameKey];
+            document.getElementById('game-label').innerText = gameKey.toUpperCase().replace('-', ' ');
+        } else {
+            alert('Game module not found.');
+            window.location.href = 'index.html';
+        }
+    </script>
+</body>
+</html>
